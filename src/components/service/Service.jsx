@@ -7,6 +7,7 @@ import 'swiper/css/scrollbar'; // Импорт стилей для скролл�
 import foto1 from '../../images/foto-office1.jpg';
 import foto2 from '../../images/foto-office2.jpg';
 import foto3 from '../../images/foto-office3.jpg';
+import styles from './Service.module.css'
 
 function Service() {
     const textStyle = {
@@ -15,7 +16,7 @@ function Service() {
         textShadow: '1px 1px 1px black', // контур шрифта черным
     };
     return (
-        <div>
+        <div className={styles.wrapper}>
             <div className="container d-flex justify-content-center align-items-center p-4">
                 <div className="row text-center">
                     <div className="col">

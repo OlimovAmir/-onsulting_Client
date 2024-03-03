@@ -1,0 +1,22 @@
+.textStyleH1 {
+    color: blue;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+.fotoIcon {
+    border-radius: 30%;
+    width: 100%;
+    height: auto;
+}
+
+.back {
+    
+    background: rgb(216, 214, 214);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Центрируем изображение */
+    height: 100%; /* Можете изменить высоту контейнера по своему усмотрению */
+    width: 100%; /* Занимает всю доступную ширину */
+    margin-bottom: 30px;
+}

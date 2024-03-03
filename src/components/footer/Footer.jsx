@@ -1,22 +1,33 @@
 import React from 'react'
-
+import styles from './Footer.module.css';
+import { Button } from 'react-bootstrap';
 function Footer() {
-    const textStyle = {
-        color: 'primary', // белый цвет шрифта
-        fontWeight: 'bold', // жирный стиль шрифта
-        textShadow: '1px 1px 1px black', // контур шрифта черным
-    }
-  return (
-    <div>
-        <div className="container d-flex justify-content-center align-items-center p-4">
-                <div className="row text-center">
-                    <div className="col">
-                        <h1 style={textStyle} >Широкий профиль услуг</h1>
+    return (
+        <div className={styles.wrapper}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-4">
+                        <h4>Получить бесплатную консультацию</h4>
+                    </div>
+                    <div className="col-md-3">
+
+                    </div>
+                    <div className="col-md-2">
+
+                    </div>
+                    <div className="col-md-3">
+                        <div className="container d-flex justify-content-center align-items-center p-4">
+                            <div className="row text-center">
+                                <div className="col">
+                                    <Button variant="primary">Заказать звонок</Button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Footer

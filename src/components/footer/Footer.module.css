@@ -1,0 +1,14 @@
+.wrapper {
+    background: rgb(216, 214, 214);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Центрируем изображение */
+    height: 100%; /* Можете изменить высоту контейнера по своему усмотрению */
+    width: 100%; /* Занимает всю доступную ширину */
+    margin-bottom: 30px;
+}
+
+.wrapper h4 {
+    padding-top: 10px;
+    font-weight: bold;
+}

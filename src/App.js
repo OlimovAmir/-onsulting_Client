@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Service from './components/service/Service';
 import OurAdventage from './components/our_adventage/OurAdventage';
+import Footer from './components/footer/Footer';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <OurAdventage/>
       </main>
       <footer>
-
+        <Footer/>
       </footer>
     </div>
   );
