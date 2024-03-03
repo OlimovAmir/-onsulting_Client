@@ -40,12 +40,15 @@ function Footer() {
                     <div className="row">
                         <div className="col-md-3">
                             <p>Адрес</p>
+                            <p>Таджикистан, город Худжанд</p>
                         </div>
                         <div className="col-md-3">
                             <p>Время работы</p>
+                            <p>Понедельник - Суббота <br/> С 09:00 до 20:00</p>
                         </div>
                         <div className="col-md-3">
                             <p>Телефоны</p>
+                            <p>+992 92 775 75 77</p>
                         </div>
                         <div className="col-md-3">
                             <p>Мы в соцсетях</p>
