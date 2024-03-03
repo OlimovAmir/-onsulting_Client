@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.css';
 import { Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 function Footer() {
     return (
         <div className={styles.wrapper}>
@@ -9,11 +10,17 @@ function Footer() {
                     <div className="col-md-4">
                         <h4>Получить бесплатную консультацию</h4>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-1">
 
                     </div>
-                    <div className="col-md-2">
-
+                    <div className="col-md-4">
+                        <div className="container d-flex justify-content-center align-items-center p-4">
+                            <div className="row text-center">
+                                <div className="col">
+                                    <Form.Control size="text" type="text" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="col-md-3">
                         <div className="container d-flex justify-content-center align-items-center p-4">
@@ -25,6 +32,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     )
