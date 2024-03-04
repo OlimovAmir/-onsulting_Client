@@ -52,6 +52,7 @@ function Footer() {
                         </div>
                         <div className="col-md-3">
                             <p className={styles.footerP1}>Мы в соцсетях</p>
+                            
                         </div>
                     </div>
                 </div>
