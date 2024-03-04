@@ -2,6 +2,9 @@ import React from 'react'
 import styles from './Footer.module.css';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function Footer() {
     return (
         <div>
@@ -43,8 +46,8 @@ function Footer() {
                             <p>Таджикистан, город Худжанд</p>
                         </div>
                         <div className="col-md-3">
-                            <p  className={styles.footerP1}>Время работы</p>
-                            <p>Понедельник - Суббота <br/> С 09:00 до 20:00</p>
+                            <p className={styles.footerP1}>Время работы</p>
+                            <p>Понедельник - Суббота <br /> С 09:00 до 20:00</p>
                         </div>
                         <div className="col-md-3">
                             <p className={styles.footerP1}>Телефоны</p>
@@ -52,7 +55,11 @@ function Footer() {
                         </div>
                         <div className="col-md-3">
                             <p className={styles.footerP1}>Мы в соцсетях</p>
-                            
+                            <div>
+                            <i class="fa-brands fa-facebook"></i>
+                                <i className="fab fa-react"></i>
+                                <FontAwesomeIcon icon="fa-brands fa-facebook" />
+                            </div>
                         </div>
                     </div>
                 </div>
