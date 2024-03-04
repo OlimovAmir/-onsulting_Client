@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 function Footer() {
     return (
         <div>
@@ -56,9 +56,9 @@ function Footer() {
                         <div className="col-md-3">
                             <p className={styles.footerP1}>Мы в соцсетях</p>
                             <div>
-                            <i class="fa-brands fa-facebook"></i>
-                                <i className="fab fa-react"></i>
-                                <FontAwesomeIcon icon="fa-brands fa-facebook" />
+                                <FontAwesomeIcon icon={faFacebook} />
+                                <FontAwesomeIcon icon={faInstagram} />
+                                <FontAwesomeIcon icon={faYoutube} />
                             </div>
                         </div>
                     </div>
