@@ -55,10 +55,16 @@ function Footer() {
                         </div>
                         <div className="col-md-3">
                             <p className={styles.footerP1}>Мы в соцсетях</p>
-                            <div>
-                                <FontAwesomeIcon icon={faFacebook} />
-                                <FontAwesomeIcon icon={faInstagram} />
-                                <FontAwesomeIcon icon={faYoutube} />
+                            <div className='row'>
+                                <div className='col-md-4'>
+                                    <FontAwesomeIcon icon={faFacebook} />
+                                </div>
+                                <div className='col-md-4'>
+                                    <FontAwesomeIcon icon={faInstagram} />
+                                </div>
+                                <div className='col-md-4'>
+                                    <FontAwesomeIcon icon={faYoutube} />
+                                </div>
                             </div>
                         </div>
                     </div>
