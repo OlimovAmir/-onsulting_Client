@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Footer.module.css';
-import { Button } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import { Button ,Form, Modal } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import axios from 'axios';
+
+
+
 function Footer() {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = () => setShowModal(false);
+
+    const handleClick = () => {
+        const inputValue = document.getElementById("textInput").value;
+        const currentDate = new Date().toISOString(); // Получаем текущую дату и время
+
+        axios.post('https://localhost:7023/MessageFromUser/Create', {
+            textMessage: inputValue,
+            date: currentDate
+        })
+        .then(response => {
+            console.log('Успешный запрос:', response);
+            // Очистка содержимого текстового поля
+            document.getElementById("textInput").value = "";
+            // Показ модального окна
+            setShowModal(true);
+        })
+        .catch(error => {
+            console.error('Ошибка запроса:', error);
+        });
+    };
+
     return (
         <div>
             <div className={styles.wrapper}>
@@ -21,7 +48,7 @@ function Footer() {
                             <div className="container d-flex justify-content-center align-items-center p-4">
                                 <div className="row text-center">
                                     <div className="col">
-                                        <Form.Control size="text" type="text" placeholder="" />
+                                        <Form.Control size="text" id="textInput" type="text" placeholder="" />
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +57,7 @@ function Footer() {
                             <div className="container d-flex justify-content-center align-items-center p-4">
                                 <div className="row text-center">
                                     <div className="col">
-                                        <Button variant="primary">Заказать звонок</Button>
+                                        <Button onClick={handleClick} variant="primary">Заказать звонок</Button>
                                     </div>
                                 </div>
                             </div>
