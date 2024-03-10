@@ -9,7 +9,7 @@ function Footer() {
     return (
         <div>
             <div className={styles.wrapper}>
-                <div className="container">
+                <div className="container ">
                     <div className="row">
                         <div className="col-md-4">
                             <h4>Получить бесплатную консультацию</h4>
