@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Footer.module.css';
-import { Button ,Form, Modal } from 'react-bootstrap';
+import { Button, Form, Modal } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -21,16 +21,16 @@ function Footer() {
             textMessage: inputValue,
             date: currentDate
         })
-        .then(response => {
-            console.log('Успешный запрос:', response);
-            // Очистка содержимого текстового поля
-            document.getElementById("textInput").value = "";
-            // Показ модального окна
-            setShowModal(true);
-        })
-        .catch(error => {
-            console.error('Ошибка запроса:', error);
-        });
+            .then(response => {
+                console.log('Успешный запрос:', response);
+                // Очистка содержимого текстового поля
+                document.getElementById("textInput").value = "";
+                // Показ модального окна
+                setShowModal(true);
+            })
+            .catch(error => {
+                console.error('Ошибка запроса:', error);
+            });
     };
 
     return (
@@ -62,6 +62,18 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
+                        {/* Модальное окно */}
+                        <Modal show={showModal} onHide={handleCloseModal}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Успешно!</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>Ваша заявка отправлена.</Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleCloseModal}>
+                                    Закрыть
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
                 </div>
             </div>
