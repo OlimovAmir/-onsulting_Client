@@ -31,13 +31,17 @@ function ButtonBanner() {
     setInputValue(e.target.value);
   };
 
-  // Функция для отправки данных на сервер
-  const handleSubmit = () => {
-    // Здесь можно добавить код для отправки данных на сервер
-    console.log('Отправка данных на сервер:', inputValue);
-    // После успешной отправки данных открываем второе модальное окно
-    setShowSuccessModal(true);
-  };
+ // Функция для отправки данных на сервер
+const handleSubmit = () => {
+  // Закрываем первое модальное окно
+  closeModal();
+  // Здесь можно добавить код для отправки данных на сервер
+  console.log('Отправка данных на сервер:', inputValue);
+  // После успешной отправки данных открываем второе модальное окно
+  setShowSuccessModal(true);
+};
+
+  
 
   return (
     <div className="container d-flex justify-content-center align-items-center p-4">
