@@ -10,21 +10,22 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-
 function App() {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
+  const controlsService = useAnimation();
+  const { ref: refService, inView: inViewService } = useInView();
   
+  const controlsAdvantage = useAnimation();
+  const { ref: refAdvantage, inView: inViewAdvantage } = useInView();
 
   useEffect(() => {
-    if (inView) {
-      // Анимация, которую вы хотите запустить при появлении в области видимости
-      controls.start({ opacity: 1, y: 0 });
+    if (inViewService) {
+      controlsService.start({ opacity: 1, y: 0 });
     }
-  }, [controls, inView]);
+    if (inViewAdvantage) {
+      controlsAdvantage.start({ opacity: 1, y: 0 });
+    }
+  }, [controlsService, controlsAdvantage, inViewService, inViewAdvantage]);
 
- 
   return (
     <div className="App">
       <header className="App-header">
@@ -34,22 +35,21 @@ function App() {
       </header>
       <main>
         <motion.section
-          ref={ref}
-          initial={{ opacity: 0, y: 100 }} // Начальное состояние до появления в области видимости
-          animate={controls}
-          transition={{ duration: 1 }} // Время анимации
+          ref={refService}
+          initial={{ opacity: 0, y: 100 }}
+          animate={controlsService}
+          transition={{ duration: 1 }}
         >
           <Service />
         </motion.section>
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 100 }} // Начальное состояние до появления в области видимости
-          animate={controls}
-          transition={{ duration: 5 }} // Время анимации
+        <motion.section
+          ref={refAdvantage}
+          initial={{ opacity: 0, y: 100 }}
+          animate={controlsAdvantage}
+          transition={{ duration: 1 }}
         >
           <OurAdventage />
-        </motion.div>
-
+        </motion.section>
       </main>
       <footer>
         <Footer />
