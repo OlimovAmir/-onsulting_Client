@@ -21,6 +21,11 @@ function App() {
     triggerOnce: false // позволяет использовать хук useInView несколько раз
   });
 
+  const controlsFooter = useAnimation();
+  const { ref: refFooter, inView: inViewFooter } = useInView({
+    triggerOnce: false // позволяет использовать хук useInView несколько раз
+  });
+
   useEffect(() => {
     if (inViewService) {
       controlsService.start({ opacity: 1, y: 0, transition: { duration: 1 } });
@@ -36,6 +41,14 @@ function App() {
       controlsAdvantage.start({ opacity: 0, y: 100 });
     }
   }, [controlsAdvantage, inViewAdvantage]);
+
+  useEffect(() => {
+    if (inViewFooter) {
+      controlsFooter.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    } else {
+      controlsFooter.start({ opacity: 0, y: 100 });
+    }
+  }, [controlsFooter, inViewFooter]);
 
   return (
     <div className="App">
@@ -61,7 +74,13 @@ function App() {
         </motion.section>
       </main>
       <footer>
-        <Footer />
+        <motion.footer
+          ref={refFooter}
+          initial={{ opacity: 0, y: 100 }}
+          animate={controlsFooter}
+        >
+          <Footer />
+        </motion.footer>
       </footer>
     </div>
   );
