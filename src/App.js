@@ -12,19 +12,30 @@ import { useInView } from 'react-intersection-observer';
 
 function App() {
   const controlsService = useAnimation();
-  const { ref: refService, inView: inViewService } = useInView();
+  const { ref: refService, inView: inViewService } = useInView({
+    triggerOnce: false // позволяет использовать хук useInView несколько раз
+  });
   
   const controlsAdvantage = useAnimation();
-  const { ref: refAdvantage, inView: inViewAdvantage } = useInView();
+  const { ref: refAdvantage, inView: inViewAdvantage } = useInView({
+    triggerOnce: false // позволяет использовать хук useInView несколько раз
+  });
 
   useEffect(() => {
     if (inViewService) {
-      controlsService.start({ opacity: 1, y: 0 });
+      controlsService.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    } else {
+      controlsService.start({ opacity: 0, y: 100 });
     }
+  }, [controlsService, inViewService]);
+
+  useEffect(() => {
     if (inViewAdvantage) {
-      controlsAdvantage.start({ opacity: 1, y: 0 });
+      controlsAdvantage.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    } else {
+      controlsAdvantage.start({ opacity: 0, y: 100 });
     }
-  }, [controlsService, controlsAdvantage, inViewService, inViewAdvantage]);
+  }, [controlsAdvantage, inViewAdvantage]);
 
   return (
     <div className="App">
@@ -38,7 +49,6 @@ function App() {
           ref={refService}
           initial={{ opacity: 0, y: 100 }}
           animate={controlsService}
-          transition={{ duration: 1 }}
         >
           <Service />
         </motion.section>
@@ -46,7 +56,6 @@ function App() {
           ref={refAdvantage}
           initial={{ opacity: 0, y: 100 }}
           animate={controlsAdvantage}
-          transition={{ duration: 1 }}
         >
           <OurAdventage />
         </motion.section>
