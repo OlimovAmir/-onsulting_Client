@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import OurSpecialists from './components/our_specialists/OurSpecialists';
 
 function App() {
   const controlsService = useAnimation();
@@ -72,6 +73,7 @@ function App() {
         >
           <OurAdventage />
         </motion.section>
+        <OurSpecialists/>
       </main>
       <footer>
         <motion.footer

@@ -2,7 +2,10 @@ import React from 'react'
 
 function OurSpecialists() {
   return (
-    <div>OurSpecialists</div>
+    <div>
+        <p>Наши спициалисты</p>
+        
+    </div>
   )
 }
 
